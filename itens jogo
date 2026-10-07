@@ -1,0 +1,47 @@
+package jabers2;
+import java.util.Scanner;
+public class jogo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner leia = new Scanner(System.in);
+		
+		int quantidade1;
+		double preço1;
+		double valor;
+		int quantidade2;
+		double preço2;
+		double total1;
+		double total2;
+		double total10;
+		double valort;
+		System.out.printf("quantidade item 1: ");
+		quantidade1 = leia.nextInt();
+		System.out.printf("valor do item 1:");
+		preço1 = leia.nextDouble();
+		System.out.printf("quantidade item 2:");
+		quantidade2 = leia.nextInt();
+		System.out.printf("valor do item 2:");
+		preço2 = leia.nextDouble();
+		total1 = quantidade1*preço1;
+		total2= quantidade2*preço2;
+		System.out.printf("valor total do item 1: %f \n", total1);
+		System.out.printf("valor total do item 2: %f \n", total2);
+		valor= total1+total2;
+		
+		total10= valor *(10.0/100.0);
+		valort= valor + total10;
+		System.out.printf("preço item 1: %f \n", total1);
+		System.out.printf("preço item 2: %f \n", total2);
+		System.out.printf("taxa: %f \n", total10);
+		
+		System.out.printf("o valor com a taxa é: %f ", valort);
+		
+		
+		
+		
+		
+		
+	}
+
+}
