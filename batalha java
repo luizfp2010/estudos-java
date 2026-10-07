@@ -1,0 +1,133 @@
+```java
+package jabers2;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class jogo {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        int jogadorHP = 100;
+        int inimigoHP = 80;
+        int rodada = 1;
+
+        System.out.println("=== BATALHA ===");
+        System.out.println("Você encontrou um inimigo!");
+
+        while (jogadorHP > 0 && inimigoHP > 0) {
+
+            System.out.println("\n===== RODADA " + rodada + " =====");
+            System.out.println("Sua vida: " + jogadorHP);
+            System.out.println("Vida do inimigo: " + inimigoHP);
+
+            // TURNO DO JOGADOR
+            System.out.println("\nEscolha uma ação:");
+            System.out.println("1 - Atacar");
+            System.out.println("2 - Ataque forte");
+            System.out.println("3 - Curar");
+
+            int escolha = scanner.nextInt();
+
+            if (escolha == 1) {
+
+                inimigoHP -= 20;
+                System.out.println("Você causou 20 de dano!");
+
+            } else if (escolha == 2) {
+
+                inimigoHP -= 30;
+                System.out.println("Você usou um ataque forte e causou 30 de dano!");
+
+            } else if (escolha == 3) {
+
+                jogadorHP += 15;
+
+                if (jogadorHP > 100) {
+                    jogadorHP = 100;
+                }
+
+                System.out.println("Você recuperou 15 de vida!");
+
+            } else {
+
+                System.out.println("Opção inválida!");
+                continue;
+            }
+
+            // Verifica se o inimigo morreu
+            if (inimigoHP <= 0) {
+                break;
+            }
+
+            // TURNO DO INIMIGO
+
+            System.out.println("\n--- Turno do inimigo ---");
+
+            int ataque;
+
+            // Quando o inimigo estiver com pouca vida,
+            // ele fica mais agressivo.
+            if (inimigoHP <= 30) {
+
+                ataque = random.nextInt(3);
+
+                if (ataque == 0) {
+
+                    jogadorHP -= 30;
+                    System.out.println("O inimigo usou FÚRIA e causou 30 de dano!");
+
+                } else if (ataque == 1) {
+
+                    jogadorHP -= 25;
+                    System.out.println("O inimigo usou GOLPE BRUTAL e causou 25 de dano!");
+
+                } else {
+
+                    jogadorHP -= 20;
+                    System.out.println("O inimigo usou ATAQUE RÁPIDO e causou 20 de dano!");
+                }
+
+            } else {
+
+                ataque = random.nextInt(2);
+
+                if (ataque == 0) {
+
+                    jogadorHP -= 15;
+                    System.out.println("O inimigo atacou e causou 15 de dano!");
+
+                } else {
+
+                    jogadorHP -= 10;
+                    System.out.println("O inimigo fez um ataque rápido e causou 10 de dano!");
+                }
+            }
+
+            rodada++;
+        }
+
+        // RESULTADO FINAL
+
+        System.out.println("\n====================");
+
+        if (jogadorHP <= 0) {
+
+            System.out.println("VOCÊ PERDEU!");
+            System.out.println("O inimigo venceu a batalha.");
+
+        } else {
+
+            System.out.println("VOCÊ VENCEU!");
+            System.out.println("O inimigo foi derrotado!");
+        }
+
+        System.out.println("====================");
+
+        scanner.close();
+    }
+}
+```
