@@ -1,0 +1,39 @@
+package jabers2;
+import java.util.Scanner;
+public class media {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner leia = new Scanner(System.in);
+		
+		
+		double nota1;
+			double nota2;
+			double nota3;
+			double media;
+			
+			
+			System.out.printf("digite sua primeira nota: ");
+			nota1 = leia.nextDouble();
+			
+			System.out.printf("digite sua segunda nota");
+			nota2 = leia.nextDouble();
+			
+			System.out.printf("digite sua terceira nota");
+			nota3 = leia.nextDouble();
+			
+			media = (nota1+nota2+nota3)/3;
+			
+			System.out.printf("sua media é: %f ", media);
+			if (media >= 6) {
+			System.out.printf("aprovado");
+			
+			}else if (media < 6) { 
+	 	System.out.printf("reprovado");
+			
+			
+			
+			}	
+	}
+}
+		
