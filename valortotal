@@ -1,0 +1,32 @@
+package jabers2;
+import java.util.Scanner;
+public class a2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner leia = new Scanner(System.in);		
+			
+				String nome;
+		int quantidade;
+		int valorunidade;
+		double valortotal;
+		System.out.printf("digite o nome do produto: ");
+		nome = leia.next();		
+		
+		System.out.printf("digite a quantidade: ");
+		quantidade = leia.nextInt();
+		
+		System.out.printf("digite o valor unitario:");
+		valorunidade = leia.nextInt();
+		
+		valortotal= quantidade*valorunidade;
+		
+		System.out.printf("produto : %s \n", nome);
+		
+		System.out.printf("valor da unidade: %d \n", valorunidade);
+		
+		System.out.printf("valor total: %f \n", valortotal);
+		
+	}
+
+}
