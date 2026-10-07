@@ -1,0 +1,42 @@
+package jabers2;
+import java.util.Scanner;
+public class maior {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner leia = new Scanner(System.in);
+		
+		double primeiro;
+		double segundo;
+		double terceiro;
+		
+		
+		System.out.printf("digite o primeiro numero: ");
+		primeiro = leia.nextDouble();
+		
+		System.out.printf("digite o segundo numnero: ");
+		segundo = leia.nextDouble();
+		
+		System.out.printf("digite o terceiro numero: ");
+		terceiro = leia.nextDouble();
+		
+		if (primeiro > segundo && primeiro > terceiro) {
+		System.out.printf("%f é maior", primeiro);
+		}
+		
+		else if (primeiro < segundo && segundo > terceiro ){
+			System.out.printf("%f é maior", segundo);
+		}
+		
+		else if (primeiro < terceiro && terceiro > segundo) {
+		System.out.printf("%f é maior", terceiro);
+		}
+		
+		
+		
+		
+		
+	}
+
+}
