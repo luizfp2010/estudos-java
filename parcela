@@ -1,0 +1,26 @@
+package jabers2;
+import java.util.Scanner;
+public class algumacoisa {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner leia = new Scanner(System.in);
+		
+		double valorP;
+		double avista;
+		double parcelado;
+		
+		System.out.printf("digite o valor: ");
+		valorP = leia.nextDouble();
+		
+		avista = valorP - (valorP * 20/100);
+		parcelado = valorP/3;
+		System.out.printf("preço: %f \n", valorP);
+		System.out.printf("preço a vista: %f \n", avista);
+		System.out.printf("valor de cada parcela: %f \n", parcelado);
+		
+		
+		
+	}
+
+}
